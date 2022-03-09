@@ -21,8 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
-    "scripts"
+    "src"
   ],
   "references": [
     {
