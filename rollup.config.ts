@@ -23,5 +23,5 @@ export default defineConfig({
       babelHelpers: 'runtime'
     })
   ],
-  external: ['electron', 'electron-devtools-installer']
+  external: ['electron']
 })

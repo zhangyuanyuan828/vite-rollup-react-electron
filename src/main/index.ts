@@ -29,6 +29,7 @@ async function createWindow() {
   }
   if (process.env.VITE_DEV_SERVER_URL) {
     await mainWindow.loadURL(process.env.VITE_DEV_SERVER_URL)
+    mainWindow.webContents.openDevTools()
   } else {
     createProtocol('app')
     mainWindow.loadURL('app://./index.html')
@@ -40,7 +41,7 @@ app.whenReady().then(async () => {
     try {
       await installExtension(REACT_DEVELOPER_TOOLS)
     } catch (error) {
-      console.error('Vue Devtools failed to install:', error)
+      console.error('React Devtools failed to install:', error)
     }
   }
   createWindow()
