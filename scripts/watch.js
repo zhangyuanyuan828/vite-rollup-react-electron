@@ -2,8 +2,8 @@ const { spawn } = require('child_process')
 const electron = require('electron')
 const path = require('path')
 const rollup = require('rollup')
-const loadConfigFile = require('rollup/dist/loadConfigFile')
 const vite = require('vite')
+const options = require('../rollup.config')
 
 async function createServer() {
   const server = await vite.createServer({
@@ -18,8 +18,6 @@ async function createServer() {
  * @param {vite.ViteDevServer} server
  */
 async function watchMain(server) {
-  const { options, warnings } = await loadConfigFile(path.resolve(__dirname, '../rollup.config.ts'))
-  warnings.flush()
   const watcher = rollup.watch(options)
   const protocol = server.config.server.https ? 'https://' : 'http://'
   const hostname = 'localhost'

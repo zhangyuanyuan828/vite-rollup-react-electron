@@ -5,7 +5,7 @@
   "main": "dist/main/index.js",
   "scripts": {
     "start": "node scripts/watch.js",
-    "build": "tsc && vite build && rollup -c rollup.config.ts && electron-builder",
+    "build": "tsc && vite build && rollup -c rollup.config.js && electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
