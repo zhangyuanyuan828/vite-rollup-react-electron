@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import eslintPlugin from 'vite-plugin-eslint'
 
 export default defineConfig({
   server: {
@@ -9,5 +10,8 @@ export default defineConfig({
     outDir: 'dist/renderer',
     emptyOutDir: true
   },
-  plugins: [react()]
+  plugins: [
+    eslintPlugin(),
+    react(),
+  ]
 })

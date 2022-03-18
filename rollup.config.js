@@ -1,5 +1,6 @@
 const { babel } = require('@rollup/plugin-babel')
 const commonjs = require('@rollup/plugin-commonjs')
+const eslint = require('@rollup/plugin-eslint')
 const { nodeResolve } = require('@rollup/plugin-node-resolve')
 const rollup = require('rollup')
 const pkg = require('./package.json')
@@ -15,6 +16,7 @@ module.exports = rollup.defineConfig({
     }
   ],
   plugins: [
+    eslint(),
     nodeResolve({ extensions }),
     commonjs(),
     babel({
