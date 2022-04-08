@@ -1,11 +1,13 @@
 {
   "name": "vite-react-electron",
+  "description": "vite react electron demo",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/main/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development ts-node scripts/start.ts",
     "build": "cross-env NODE_ENV=production tsc && vite build && rollup -c rollup.config.ts && electron-builder --config electron-builder.config.js",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
@@ -33,6 +35,7 @@
     "electron-devtools-installer": "^3.2.0",
     "eslint": "^8.12.0",
     "eslint-config-react-app": "^7.0.0",
+    "lint-staged": "^12.3.7",
     "rollup": "^2.70.1",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3",
@@ -46,5 +49,11 @@
   },
   "browserslist": [
     "last 1 electron version"
-  ]
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
+  }
 }
