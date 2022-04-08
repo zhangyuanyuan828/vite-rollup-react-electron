@@ -1,9 +1,21 @@
 # vite-react-electron
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+An electron template project using react, vite and rollup
 
-### `npm run start`
+## Usage
 
-### `npm run build`
+```bash
+# clone the project
+git clone https://github.com/zhangyuanyuan828/vite-react-electron.git
+
+# install dependencies
+npm install
+
+# start the app
+npm run start
+
+# build the app
+npm run build
+```
