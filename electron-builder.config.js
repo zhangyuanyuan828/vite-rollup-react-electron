@@ -1,9 +1,14 @@
 const pkg = require('./package.json')
 
+/**
+ * @type {import('electron-builder').Configuration}
+ * @see https://www.electron.build/configuration/configuration
+ */
 module.exports = {
-  appId: 'com.example.demo',
+  appId: 'com.example.app',
+  productName: 'AppName',
+  copyright: 'Copyright © 2022 ${author}',
   asar: true,
-  productName: 'electron demo',
   directories: {
     output: 'build'
   },
