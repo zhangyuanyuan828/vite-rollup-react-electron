@@ -8,7 +8,8 @@
     "start": "cross-env NODE_ENV=development ts-node scripts/start.ts",
     "build": "cross-env NODE_ENV=production tsc && vite build && rollup -c rollup.config.ts && electron-builder --config electron-builder.config.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -21,6 +22,8 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-eslint": "^8.0.1",
@@ -35,6 +38,7 @@
     "electron-devtools-installer": "^3.2.0",
     "eslint": "^8.12.0",
     "eslint-config-react-app": "^7.0.0",
+    "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "rollup": "^2.70.1",
     "ts-node": "^10.7.0",
@@ -50,8 +54,11 @@
   "browserslist": [
     "last 1 electron version"
   ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"
