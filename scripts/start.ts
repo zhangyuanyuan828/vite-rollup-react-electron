@@ -10,8 +10,6 @@ import options from '../rollup.config'
   await server.listen()
   server.printUrls()
 
-  console.log(process.env.NODE_ENV)
-
   const addressInfo = server?.httpServer?.address() as AddressInfo
   const protocol = server.config.server.https ? 'https://' : 'http://'
   const hostname = 'localhost'

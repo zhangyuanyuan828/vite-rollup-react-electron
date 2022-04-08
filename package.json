@@ -5,7 +5,7 @@
   "main": "dist/main/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development ts-node scripts/start.ts",
-    "build": "cross-env NODE_ENV=production tsc && vite build && rollup -c rollup.config.ts && electron-builder",
+    "build": "cross-env NODE_ENV=production tsc && vite build && rollup -c rollup.config.ts && electron-builder --config electron-builder.config.js",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
@@ -46,12 +46,5 @@
   },
   "browserslist": [
     "last 1 electron version"
-  ],
-  "build": {
-    "appId": "com.example.app",
-    "asar": true,
-    "directories": {
-      "output": "build"
-    }
-  }
+  ]
 }
