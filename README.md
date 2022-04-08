@@ -1,4 +1,4 @@
-# vite-react-electron
+# vite-rollup-react-electron
 
 ## Overview
 
