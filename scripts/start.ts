@@ -19,10 +19,12 @@ import options from '../rollup.config'
   const env = Object.assign(process.env, {
     VITE_DEV_SERVER_URL
   })
-  const watcher = watch(options)
+  const [mainOptions, preloadOptions] = options
+  const mainWatcher = watch(mainOptions)
+  const preloadWatcher = watch(preloadOptions)
 
   let electronProcess: ChildProcess
-  watcher.on('event', event => {
+  mainWatcher.on('event', event => {
     if (event.code !== 'END') {
       return
     }
@@ -33,7 +35,14 @@ import options from '../rollup.config'
     electronProcess = spawn(electron as unknown as string, ['.'], { env })
     electronProcess.on('close', () => {
       server.close()
-      watcher.close()
+      mainWatcher.close()
+      preloadWatcher.close()
     })
+  })
+  preloadWatcher.on('event', event => {
+    if (event.code !== 'END') {
+      return
+    }
+    server.ws.send({ type: 'full-reload' })
   })
 })()

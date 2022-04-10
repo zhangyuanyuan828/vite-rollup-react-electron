@@ -19,7 +19,11 @@ async function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1600,
     height: 900,
-    webPreferences: {}
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: join(__dirname, '../preload/index.js')
+    }
   })
   Menu.setApplicationMenu(null)
   if (isDevelopment) {

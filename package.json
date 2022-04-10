@@ -1,6 +1,7 @@
 {
   "name": "vite-rollup-react-electron",
   "description": "vite rollup react electron demo",
+  "author": "玲玲子 <zhangyuanyuan828@outlook.com>",
   "private": true,
   "version": "0.0.1",
   "main": "dist/main/index.js",
