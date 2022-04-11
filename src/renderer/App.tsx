@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import logo from './logo.svg'
+import { api } from './preload'
 import './App.css'
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button>
+        </p>
+        <p>
+          <button type="button" onClick={() => api.sayHello()}>Say Hello</button>
         </p>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
