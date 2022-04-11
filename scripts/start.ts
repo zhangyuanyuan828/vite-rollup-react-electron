@@ -32,7 +32,7 @@ import options from '../rollup.config'
       electronProcess.removeAllListeners('close')
       electronProcess.kill()
     }
-    electronProcess = spawn(electron as unknown as string, ['.'], { env })
+    electronProcess = spawn(electron as unknown as string, ['.'], { env, stdio: 'inherit' })
     electronProcess.on('close', () => {
       server.close()
       mainWatcher.close()
