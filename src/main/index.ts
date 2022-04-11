@@ -1,5 +1,4 @@
 import { app, BrowserWindow, globalShortcut, Menu, protocol } from 'electron'
-import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 import { join } from 'path'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -42,6 +41,7 @@ async function createWindow() {
 
 app.whenReady().then(async () => {
   if (isDevelopment) {
+    const { default: installExtension, REACT_DEVELOPER_TOOLS } = await import('electron-devtools-installer')
     try {
       await installExtension(REACT_DEVELOPER_TOOLS)
     } catch (error) {

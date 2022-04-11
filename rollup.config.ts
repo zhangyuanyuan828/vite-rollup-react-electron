@@ -31,7 +31,7 @@ export default defineConfig([
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       })
     ],
-    external: ['electron']
+    external: ['electron', 'electron-devtools-installer']
   },
   {
     input: 'src/preload/index.ts',
