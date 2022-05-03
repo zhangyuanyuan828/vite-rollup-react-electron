@@ -8,53 +8,54 @@ import pkg from './package.json'
 
 const extensions = ['.js', '.ts']
 
-export default defineConfig([
-  {
-    input: 'src/main/index.ts',
-    output: [
-      {
-        file: pkg.main,
-        format: 'cjs'
-      }
-    ],
-    plugins: [
-      eslint(),
-      nodeResolve({ extensions }),
-      commonjs(),
-      babel({
-        extensions,
-        include: 'src/**/*',
-        babelHelpers: 'runtime'
-      }),
-      replace({
-        preventAssignment: true,
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      })
-    ],
-    external: ['electron', 'electron-devtools-installer']
-  },
-  {
-    input: 'src/preload/index.ts',
-    output: [
-      {
-        file: 'dist/preload/index.js',
-        format: 'cjs'
-      }
-    ],
-    plugins: [
-      eslint(),
-      nodeResolve({ extensions }),
-      commonjs(),
-      babel({
-        extensions,
-        include: 'src/**/*',
-        babelHelpers: 'runtime'
-      }),
-      replace({
-        preventAssignment: true,
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      })
-    ],
-    external: ['electron']
-  }
-])
+export const mainOptions = defineConfig({
+  input: 'src/main/index.ts',
+  output: [
+    {
+      file: pkg.main,
+      format: 'cjs'
+    }
+  ],
+  plugins: [
+    eslint(),
+    nodeResolve({ extensions }),
+    commonjs(),
+    babel({
+      extensions,
+      include: 'src/**/*',
+      babelHelpers: 'runtime'
+    }),
+    replace({
+      preventAssignment: true,
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
+  ],
+  external: ['electron', 'electron-devtools-installer']
+})
+
+export const preloadOptions = defineConfig({
+  input: 'src/preload/index.ts',
+  output: [
+    {
+      file: 'dist/preload/index.js',
+      format: 'cjs'
+    }
+  ],
+  plugins: [
+    eslint(),
+    nodeResolve({ extensions }),
+    commonjs(),
+    babel({
+      extensions,
+      include: 'src/**/*',
+      babelHelpers: 'runtime'
+    }),
+    replace({
+      preventAssignment: true,
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
+  ],
+  external: ['electron']
+})
+
+export default defineConfig([mainOptions, preloadOptions])

@@ -3,7 +3,7 @@ import electron from 'electron'
 import { AddressInfo } from 'net'
 import { watch } from 'rollup'
 import { createServer } from 'vite'
-import options from '../rollup.config'
+import { mainOptions, preloadOptions } from '../rollup.config'
 
 (async function start() {
   const server = await createServer()
@@ -19,7 +19,6 @@ import options from '../rollup.config'
   const env = Object.assign(process.env, {
     VITE_DEV_SERVER_URL
   })
-  const [mainOptions, preloadOptions] = options
   const mainWatcher = watch(mainOptions)
   const preloadWatcher = watch(preloadOptions)
 
