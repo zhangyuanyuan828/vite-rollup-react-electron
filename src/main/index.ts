@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut, Menu, protocol } from 'electron'
+import { app, BrowserWindow, globalShortcut, ipcMain, Menu, protocol } from 'electron'
 import { join } from 'path'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -18,6 +18,7 @@ async function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1600,
     height: 900,
+    frame: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -37,6 +38,15 @@ async function createWindow() {
     createProtocol('app')
     mainWindow.loadURL('app://./index.html')
   }
+  mainWindow.on('maximize', () => {
+    mainWindow.webContents.send('window-maximize')
+  })
+  mainWindow.on('unmaximize', () => {
+    mainWindow.webContents.send('window-unmaximize')
+  })
+  mainWindow.on('restore', () => {
+    mainWindow.webContents.send('window-restore')
+  })
 }
 
 app.whenReady().then(async () => {
@@ -76,3 +86,19 @@ if (isDevelopment) {
     })
   }
 }
+
+ipcMain.on('window-minimize', () => {
+  BrowserWindow.getFocusedWindow()?.minimize();
+})
+
+ipcMain.on('window-maximize', () => {
+  BrowserWindow.getFocusedWindow()?.maximize();
+})
+
+ipcMain.on('window-restore', () => {
+  BrowserWindow.getFocusedWindow()?.restore();
+})
+
+ipcMain.on('window-close', () => {
+  BrowserWindow.getFocusedWindow()?.close();
+})
