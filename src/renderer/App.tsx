@@ -1,6 +1,6 @@
+import { chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { VscChromeClose, VscChromeMaximize, VscChromeMinimize, VscChromeRestore } from 'react-icons/vsc'
-import './App.scss'
 import { api } from './preload'
 
 export function App() {
@@ -35,23 +35,85 @@ export function App() {
   }
 
   return (
-    <div className="app">
-      <div className="app-header">
-        <div className="app-logo">
+    <chakra.div
+      sx={{
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        flexFlow: 'column nowrap'
+      }}>
+      <chakra.div
+        sx={{
+          width: 'full',
+          height: 8,
+          display: 'flex',
+          flexFlow: 'row nowrap',
+          alignItems: 'center',
+          userSelect: 'none',
+          WebkitAppRegion: 'drag'
+        }}>
+        <chakra.div
+          sx={{
+            flexShrink: 0,
+            px: 4,
+            fontWeight: 'bold'
+          }}>
           <span>App Name</span>
-        </div>
-        <div className="app-menus"></div>
-        <div className="app-window-icon" onClick={handleMinimizeClick}>
+        </chakra.div>
+        <chakra.div sx={{ flex: 1 }}></chakra.div>
+        <chakra.div
+          sx={{
+            height: 'full',
+            px: 4,
+            display: 'inline-flex',
+            alignItems: 'center',
+            transitionProperty: 'background-color',
+            transitionDuration: 'slow',
+            transitionTimingFunction: 'ease-in-out',
+            WebkitAppRegion: 'no-drag',
+            _hover: {
+              backgroundColor: 'gray.300'
+            }
+          }}
+          onClick={handleMinimizeClick}>
           <VscChromeMinimize />
-        </div>
-        <div className="app-window-icon" onClick={maximize ? handleRestoreClick : handleMaximizeClick}>
+        </chakra.div>
+        <chakra.div
+          sx={{
+            height: 'full',
+            px: 4,
+            display: 'inline-flex',
+            alignItems: 'center',
+            transitionProperty: 'background-color',
+            transitionDuration: 'slow',
+            transitionTimingFunction: 'ease-in-out',
+            WebkitAppRegion: 'no-drag',
+            _hover: {
+              backgroundColor: 'gray.300'
+            }
+          }}
+          onClick={maximize ? handleRestoreClick : handleMaximizeClick}>
           {maximize ? <VscChromeRestore /> : <VscChromeMaximize />}
-        </div>
-        <div className="app-window-icon window-close" onClick={handleCloseClick}>
+        </chakra.div>
+        <chakra.div
+          sx={{
+            height: 'full',
+            px: 4,
+            display: 'inline-flex',
+            alignItems: 'center',
+            transitionProperty: 'background-color',
+            transitionDuration: 'slow',
+            transitionTimingFunction: 'ease-in-out',
+            WebkitAppRegion: 'no-drag',
+            _hover: {
+              backgroundColor: 'red.500',
+              color: 'white'
+            }
+          }}
+          onClick={handleCloseClick}>
           <VscChromeClose />
-        </div>
-      </div>
-      <div className="app-content"></div>
-    </div>
+        </chakra.div>
+      </chakra.div>
+    </chakra.div>
   )
 }
