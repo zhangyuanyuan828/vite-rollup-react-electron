@@ -30,7 +30,7 @@
     padding: 0 1em;
     display: inline-flex;
     align-items: center;
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     -webkit-app-region: no-drag;
     &:hover {
       background-color: #ccc;

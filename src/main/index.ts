@@ -88,17 +88,17 @@ if (isDevelopment) {
 }
 
 ipcMain.on('window-minimize', () => {
-  BrowserWindow.getFocusedWindow()?.minimize();
+  BrowserWindow.getFocusedWindow()?.minimize()
 })
 
 ipcMain.on('window-maximize', () => {
-  BrowserWindow.getFocusedWindow()?.maximize();
+  BrowserWindow.getFocusedWindow()?.maximize()
 })
 
 ipcMain.on('window-restore', () => {
-  BrowserWindow.getFocusedWindow()?.restore();
+  BrowserWindow.getFocusedWindow()?.restore()
 })
 
 ipcMain.on('window-close', () => {
-  BrowserWindow.getFocusedWindow()?.close();
+  BrowserWindow.getFocusedWindow()?.close()
 })

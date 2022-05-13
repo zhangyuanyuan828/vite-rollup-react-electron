@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import { VscChromeClose, VscChromeMaximize, VscChromeMinimize, VscChromeRestore } from 'react-icons/vsc'
-import './App.scss';
-import { api } from './preload';
+import './App.scss'
+import { api } from './preload'
 
 export function App() {
-  const [maximize, setMaximize] = useState(false);
+  const [maximize, setMaximize] = useState(false)
 
   useEffect(() => {
     api.onWindowMaximize(() => {
