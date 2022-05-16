@@ -72,7 +72,10 @@ export function App() {
             transitionTimingFunction: 'ease-in-out',
             WebkitAppRegion: 'no-drag',
             _hover: {
-              backgroundColor: 'gray.300'
+              backgroundColor: '#ccc'
+            },
+            _active: {
+              backgroundColor: '#aaa'
             }
           }}
           onClick={handleMinimizeClick}>
@@ -89,7 +92,10 @@ export function App() {
             transitionTimingFunction: 'ease-in-out',
             WebkitAppRegion: 'no-drag',
             _hover: {
-              backgroundColor: 'gray.300'
+              backgroundColor: '#ccc'
+            },
+            _active: {
+              backgroundColor: '#aaa'
             }
           }}
           onClick={maximize ? handleRestoreClick : handleMaximizeClick}>
@@ -107,6 +113,10 @@ export function App() {
             WebkitAppRegion: 'no-drag',
             _hover: {
               backgroundColor: 'red.500',
+              color: 'white'
+            },
+            _active: {
+              backgroundColor: 'red.400',
               color: 'white'
             }
           }}
