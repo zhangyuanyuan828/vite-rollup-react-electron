@@ -35,23 +35,29 @@ export function App() {
   }
 
   return (
-    <div className="app">
-      <div className="app-header">
-        <div className="app-logo">
+    <div className="w-screen h-screen flex flex-col flex-nowrap">
+      <div className="w-full h-8 flex-shrink-0 flex flex-row flex-nowrap items-center select-none app-drag">
+        <div className="flex-shrink-0 font-bold px-4">
           <span>App Name</span>
         </div>
-        <div className="app-menus"></div>
-        <div className="app-window-icon" onClick={handleMinimizeClick}>
+        <div className="flex-1"></div>
+        <div className="h-full px-4 inline-flex items-center app-no-drag transition-colors duration-300 hover:bg-gray-300" onClick={handleMinimizeClick}>
           <VscChromeMinimize />
         </div>
-        <div className="app-window-icon" onClick={maximize ? handleRestoreClick : handleMaximizeClick}>
+        <div
+          className="h-full px-4 inline-flex items-center app-no-drag transition-colors duration-300 hover:bg-gray-300"
+          onClick={maximize ? handleRestoreClick : handleMaximizeClick}>
           {maximize ? <VscChromeRestore /> : <VscChromeMaximize />}
         </div>
-        <div className="app-window-icon window-close" onClick={handleCloseClick}>
+        <div
+          className="h-full px-4 inline-flex items-center app-no-drag transition-colors duration-300 hover:bg-red-600 hover:text-white"
+          onClick={handleCloseClick}>
           <VscChromeClose />
         </div>
       </div>
-      <div className="app-content"></div>
+      <div className="flex-1 overflow-y-auto">
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      </div>
     </div>
   )
 }
