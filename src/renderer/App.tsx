@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { VscChromeClose, VscChromeMaximize, VscChromeMinimize, VscChromeRestore } from 'react-icons/vsc'
+import { Button, BUTTON_COLOR_THEMES } from './components'
 import { api } from './preload'
 
 export function App() {
@@ -54,8 +55,36 @@ export function App() {
           <VscChromeClose />
         </div>
       </div>
-      <div className="flex-1 overflow-y-auto">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <div className="flex-1 overflow-y-auto px-4">
+        <div className="flex flex-col gap-4">
+          <div className="flex gap-4 items-baseline">
+            <Button size="small">Small</Button>
+            <Button>Default</Button>
+            <Button size="large">Large</Button>
+            <Button disabled>Disabled</Button>
+            <Button round>Round</Button>
+          </div>
+          {BUTTON_COLOR_THEMES.map(colorTheme => (
+            <div key={colorTheme} className="flex gap-4 items-baseline">
+              <Button colorTheme={colorTheme} size="small">
+                Small
+              </Button>
+              <Button colorTheme={colorTheme}>Default</Button>
+              <Button colorTheme={colorTheme} size="large">
+                Large
+              </Button>
+              <Button colorTheme={colorTheme} disabled>
+                Disabled
+              </Button>
+              <Button colorTheme={colorTheme} round>
+                Round
+              </Button>
+            </div>
+          ))}
+          <Button colorTheme="blue" block>
+            Block
+          </Button>
+        </div>
       </div>
     </div>
   )
