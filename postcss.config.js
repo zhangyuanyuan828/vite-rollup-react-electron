@@ -1,6 +1,12 @@
 module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {}
-  }
+  plugins: [
+    require('postcss-each')({
+      plugins: {
+        beforeEach: [
+          require('tailwindcss'),
+          require('autoprefixer')
+        ]
+      }
+    })
+  ]
 }

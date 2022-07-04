@@ -48,6 +48,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.14",
+    "postcss-each": "^1.1.0",
     "prettier": "2.7.1",
     "prop-types": "^15.8.1",
     "rollup": "^2.75.7",

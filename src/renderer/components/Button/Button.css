@@ -41,177 +41,31 @@
   @apply rounded-full;
 }
 
-/* color theme blue */
-.l-btn.l-btn-blue {
-  @apply border-blue-500 bg-blue-500 text-white;
-}
+@each $color in blue, green, pink, purple, red, teal, yellow {
+  .l-btn.l-btn-$(color) {
+    @apply border-$(color)-500 bg-$(color)-500 text-white;
+  }
+  .l-btn.l-btn-$(color) {
+    @apply border-$(color)-500 bg-$(color)-500 text-white;
+  }
 
-.l-btn.l-btn-blue:hover {
-  @apply border-blue-400 bg-blue-400;
-}
+  .l-btn.l-btn-$(color):hover {
+    @apply border-$(color)-400 bg-$(color)-400;
+  }
 
-.l-btn.l-btn-blue:focus {
-  @apply border-blue-400 bg-blue-400;
-}
+  .l-btn.l-btn-$(color):focus {
+    @apply border-$(color)-400 bg-$(color)-400;
+  }
 
-.l-btn.l-btn-blue:focus-visible {
-  @apply outline-blue-600;
-}
+  .l-btn.l-btn-$(color):focus-visible {
+    @apply outline-$(color)-600;
+  }
 
-.l-btn.l-btn-blue:active {
-  @apply border-blue-600 bg-blue-600;
-}
+  .l-btn.l-btn-$(color):active {
+    @apply border-$(color)-600 bg-$(color)-600;
+  }
 
-.l-btn.l-btn-blue:disabled {
-  @apply border-blue-300 bg-blue-300;
-}
-
-/* color theme green */
-.l-btn.l-btn-green {
-  @apply border-green-500 bg-green-500 text-white;
-}
-
-.l-btn.l-btn-green:hover {
-  @apply border-green-400 bg-green-400;
-}
-
-.l-btn.l-btn-green:focus {
-  @apply border-green-400 bg-green-400;
-}
-
-.l-btn.l-btn-green:focus-visible {
-  @apply outline-green-600;
-}
-
-.l-btn.l-btn-green:active {
-  @apply border-green-600 bg-green-600;
-}
-
-.l-btn.l-btn-green:disabled {
-  @apply border-green-300 bg-green-300;
-}
-
-/* color theme pink */
-.l-btn.l-btn-pink {
-  @apply border-pink-500 bg-pink-500 text-white;
-}
-
-.l-btn.l-btn-pink:hover {
-  @apply border-pink-400 bg-pink-400;
-}
-
-.l-btn.l-btn-pink:focus {
-  @apply border-pink-400 bg-pink-400;
-}
-
-.l-btn.l-btn-pink:focus-visible {
-  @apply outline-pink-600;
-}
-
-.l-btn.l-btn-pink:active {
-  @apply border-pink-600 bg-pink-600;
-}
-
-.l-btn.l-btn-pink:disabled {
-  @apply border-pink-300 bg-pink-300;
-}
-
-/* color theme yellow */
-.l-btn.l-btn-yellow {
-  @apply border-yellow-500 bg-yellow-500 text-white;
-}
-
-.l-btn.l-btn-yellow:hover {
-  @apply border-yellow-400 bg-yellow-400;
-}
-
-.l-btn.l-btn-yellow:focus {
-  @apply border-yellow-400 bg-yellow-400;
-}
-
-.l-btn.l-btn-yellow:focus-visible {
-  @apply outline-yellow-600;
-}
-
-.l-btn.l-btn-yellow:active {
-  @apply border-yellow-600 bg-yellow-600;
-}
-
-.l-btn.l-btn-yellow:disabled {
-  @apply border-yellow-300 bg-yellow-300;
-}
-
-/* color theme red */
-.l-btn.l-btn-red {
-  @apply border-red-500 bg-red-500 text-white;
-}
-
-.l-btn.l-btn-red:hover {
-  @apply border-red-400 bg-red-400;
-}
-
-.l-btn.l-btn-red:focus {
-  @apply border-red-400 bg-red-400;
-}
-
-.l-btn.l-btn-red:focus-visible {
-  @apply outline-red-600;
-}
-
-.l-btn.l-btn-red:active {
-  @apply border-red-600 bg-red-600;
-}
-
-.l-btn.l-btn-red:disabled {
-  @apply border-red-300 bg-red-300;
-}
-
-/* color theme teal */
-.l-btn.l-btn-teal {
-  @apply border-teal-500 bg-teal-500 text-white;
-}
-
-.l-btn.l-btn-teal:hover {
-  @apply border-teal-400 bg-teal-400;
-}
-
-.l-btn.l-btn-teal:focus {
-  @apply border-teal-400 bg-teal-400;
-}
-
-.l-btn.l-btn-teal:focus-visible {
-  @apply outline-teal-600;
-}
-
-.l-btn.l-btn-teal:active {
-  @apply border-teal-600 bg-teal-600;
-}
-
-.l-btn.l-btn-teal:disabled {
-  @apply border-teal-300 bg-teal-300;
-}
-
-/* color theme purple */
-.l-btn.l-btn-purple {
-  @apply border-purple-500 bg-purple-500 text-white;
-}
-
-.l-btn.l-btn-purple:hover {
-  @apply border-purple-400 bg-purple-400;
-}
-
-.l-btn.l-btn-purple:focus {
-  @apply border-purple-400 bg-purple-400;
-}
-
-.l-btn.l-btn-purple:focus-visible {
-  @apply outline-purple-600;
-}
-
-.l-btn.l-btn-purple:active {
-  @apply border-purple-600 bg-purple-600;
-}
-
-.l-btn.l-btn-purple:disabled {
-  @apply border-purple-300 bg-purple-300;
+  .l-btn.l-btn-$(color):disabled {
+    @apply border-$(color)-300 bg-$(color)-300;
+  }
 }
