@@ -60,9 +60,20 @@ export function App() {
           <div className="flex gap-4 items-baseline">
             <Button size="small">Small</Button>
             <Button>Default</Button>
-            <Button size="large">Large</Button>
             <Button disabled>Disabled</Button>
             <Button round>Round</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="ghost" disabled>
+              Ghost Disabled
+            </Button>
+            <Button variant="link">Link</Button>
+            <Button variant="link" disabled>
+              Link Disabled
+            </Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="outline" disabled>
+              Outline Disabled
+            </Button>
           </div>
           {BUTTON_COLOR_THEMES.map(colorTheme => (
             <div key={colorTheme} className="flex gap-4 items-baseline">
@@ -70,14 +81,29 @@ export function App() {
                 Small
               </Button>
               <Button colorTheme={colorTheme}>Default</Button>
-              <Button colorTheme={colorTheme} size="large">
-                Large
-              </Button>
               <Button colorTheme={colorTheme} disabled>
                 Disabled
               </Button>
               <Button colorTheme={colorTheme} round>
                 Round
+              </Button>
+              <Button colorTheme={colorTheme} variant="ghost">
+                Ghost
+              </Button>
+              <Button colorTheme={colorTheme} variant="ghost" disabled>
+                Ghost Disabled
+              </Button>
+              <Button colorTheme={colorTheme} variant="link">
+                Link
+              </Button>
+              <Button colorTheme={colorTheme} variant="link" disabled>
+                Link Disabled
+              </Button>
+              <Button colorTheme={colorTheme} variant="outline">
+                Outline
+              </Button>
+              <Button colorTheme={colorTheme} variant="outline" disabled>
+                Outline Disabled
               </Button>
             </div>
           ))}

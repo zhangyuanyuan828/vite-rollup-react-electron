@@ -1,12 +1,8 @@
 .l-btn {
-  @apply box-border py-2 px-4 rounded border border-gray-300 bg-white cursor-pointer transition-colors duration-300;
+  @apply box-border py-2 px-4 rounded border border-gray-300 cursor-pointer transition-colors duration-300;
 }
 
 .l-btn:hover {
-  @apply border-blue-400 text-blue-400;
-}
-
-.l-btn:focus {
   @apply border-blue-400 text-blue-400;
 }
 
@@ -19,7 +15,7 @@
 }
 
 .l-btn:disabled {
-  @apply cursor-not-allowed bg-white border-gray-200 text-gray-400;
+  @apply cursor-not-allowed border-gray-200 text-gray-400;
 }
 
 /* button block */
@@ -28,11 +24,11 @@
 }
 
 /* button size */
-.l-btn.l-btn-small {
+.l-btn.l-btn-size-small {
   @apply py-1 px-2;
 }
 
-.l-btn.l-btn-large {
+.l-btn.l-btn-size-large {
   @apply py-3 px-6;
 }
 
@@ -41,31 +37,152 @@
   @apply rounded-full;
 }
 
-@each $color in blue, green, pink, purple, red, teal, yellow {
-  .l-btn.l-btn-$(color) {
-    @apply border-$(color)-500 bg-$(color)-500 text-white;
-  }
-  .l-btn.l-btn-$(color) {
+/* button variant ghost */
+.l-btn.l-btn-variant-ghost {
+  @apply bg-transparent border-transparent;
+}
+
+.l-btn.l-btn-variant-ghost:hover {
+  @apply border-blue-400 text-blue-400;
+}
+
+.l-btn.l-btn-variant-ghost:focus-visible {
+  @apply border-blue-600 text-blue-600 outline-blue-600;
+}
+
+.l-btn.l-btn-variant-ghost:active {
+  @apply border-blue-600 text-blue-600;
+}
+
+.l-btn.l-btn-variant-ghost:disabled {
+  @apply bg-transparent border-transparent text-gray-400;
+}
+
+/* button variant link */
+.l-btn.l-btn-variant-link {
+  @apply bg-transparent border-transparent;
+}
+
+.l-btn.l-btn-variant-link:hover {
+  @apply text-blue-400 underline;
+}
+
+.l-btn.l-btn-variant-link:focus-visible {
+  @apply underline outline-none;
+}
+
+.l-btn.l-btn-variant-link:active {
+  @apply text-blue-600;
+}
+
+.l-btn.l-btn-variant-link:disabled {
+  @apply bg-transparent border-transparent text-gray-400 no-underline;
+}
+
+/* button variant outline */
+.l-btn.l-btn-variant-outline {
+  @apply bg-transparent;
+}
+
+.l-btn.l-btn-variant-outline:hover {
+  @apply border-blue-400 text-blue-400;
+}
+
+.l-btn.l-btn-variant-outline:focus-visible {
+  @apply border-blue-600 text-blue-600 outline-blue-600;
+}
+
+.l-btn.l-btn-variant-outline:active {
+  @apply border-blue-600 text-blue-600;
+}
+
+.l-btn.l-btn-variant-outline:disabled {
+  @apply bg-transparent border-gray-200 text-gray-400;
+}
+
+@each $color in amber, blue, cyan, emerald, fuchsia, gray, green, indigo, lime, neutral, orange, pink, purple, red, rose, sky, slate, stone, teal, violet,
+  yellow, zinc
+{
+  .l-btn.l-btn-color-$(color) {
     @apply border-$(color)-500 bg-$(color)-500 text-white;
   }
 
-  .l-btn.l-btn-$(color):hover {
+  .l-btn.l-btn-color-$(color):hover {
     @apply border-$(color)-400 bg-$(color)-400;
   }
 
-  .l-btn.l-btn-$(color):focus {
-    @apply border-$(color)-400 bg-$(color)-400;
-  }
-
-  .l-btn.l-btn-$(color):focus-visible {
+  .l-btn.l-btn-color-$(color):focus-visible {
     @apply outline-$(color)-600;
   }
 
-  .l-btn.l-btn-$(color):active {
+  .l-btn.l-btn-color-$(color):active {
     @apply border-$(color)-600 bg-$(color)-600;
   }
 
-  .l-btn.l-btn-$(color):disabled {
+  .l-btn.l-btn-color-$(color):disabled {
     @apply border-$(color)-300 bg-$(color)-300;
+  }
+
+  /* button variant ghost */
+  .l-btn.l-btn-variant-ghost.l-btn-color-$(color) {
+    @apply border-transparent bg-transparent text-$(color)-500;
+  }
+
+  .l-btn.l-btn-variant-ghost.l-btn-color-$(color):hover {
+    @apply border-$(color)-400 bg-$(color)-400 text-white;
+  }
+
+  .l-btn.l-btn-variant-ghost.l-btn-color-$(color):focus-visible {
+    @apply border-$(color)-600 bg-$(color)-400 text-white;
+  }
+
+  .l-btn.l-btn-variant-ghost.l-btn-color-$(color):active {
+    @apply border-$(color)-600 bg-$(color)-600 text-white;
+  }
+
+  .l-btn.l-btn-variant-ghost.l-btn-color-$(color):disabled {
+    @apply bg-transparent border-transparent text-$(color)-300;
+  }
+
+  /* button variant link */
+  .l-btn.l-btn-variant-link.l-btn-color-$(color) {
+    @apply bg-transparent border-transparent text-$(color)-500;
+  }
+
+  .l-btn.l-btn-variant-link.l-btn-color-$(color):hover {
+    @apply text-$(color)-400 underline;
+  }
+
+  .l-btn.l-btn-variant-link.l-btn-color-$(color):focus-visible {
+    @apply underline outline-none;
+  }
+
+  .l-btn.l-btn-variant-link.l-btn-color-$(color):active {
+    @apply text-$(color)-600;
+  }
+
+  .l-btn.l-btn-variant-link.l-btn-color-$(color):disabled {
+    @apply text-$(color)-300 no-underline;
+  }
+
+  /* button variant outline */
+  .l-btn.l-btn-variant-outline.l-btn-color-$(color) {
+    @apply bg-transparent text-$(color)-500;
+  }
+
+  .l-btn.l-btn-variant-outline.l-btn-color-$(color):hover {
+    @apply border-$(color)-400 bg-$(color)-400 text-white;
+  }
+
+  .l-btn.l-btn-variant-outline.l-btn-color-$(color):focus-visible {
+    @apply outline-$(color)-600;
+  }
+
+  .l-btn.l-btn-variant-outline.l-btn-color-$(color):active {
+    @apply border-$(color)-600 bg-$(color)-600;
+  }
+
+  .l-btn.l-btn-variant-outline.l-btn-color-$(color):disabled {
+    @apply border-$(color)-300 text-$(color)-300 bg-transparent;
   }
 }
