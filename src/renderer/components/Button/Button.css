@@ -100,6 +100,90 @@
   @apply bg-transparent border-gray-200 text-gray-400;
 }
 
+/* Button color theme */
+.l-btn.l-btn-color-light-gray {
+  @apply border-gray-200 bg-gray-200 text-black;
+}
+
+.l-btn.l-btn-color-light-gray:hover {
+  @apply border-gray-300 bg-gray-300;
+}
+
+.l-btn.l-btn-color-light-gray:focus-visible {
+  @apply outline-gray-400;
+}
+
+.l-btn.l-btn-color-light-gray:active {
+  @apply border-gray-400 bg-gray-400;
+}
+
+.l-btn.l-btn-color-light-gray:disabled {
+  @apply border-gray-100 bg-gray-100;
+}
+
+/* button variant ghost */
+.l-btn.l-btn-variant-ghost.l-btn-color-light-gray {
+  @apply border-transparent bg-transparent text-inherit;
+}
+
+.l-btn.l-btn-variant-ghost.l-btn-color-light-gray:hover {
+  @apply border-gray-300 bg-gray-300 text-black;
+}
+
+.l-btn.l-btn-variant-ghost.l-btn-color-light-gray:focus-visible {
+  @apply border-gray-400 bg-gray-200 text-black;
+}
+
+.l-btn.l-btn-variant-ghost.l-btn-color-light-gray:active {
+  @apply border-gray-400 bg-gray-400 text-black;
+}
+
+.l-btn.l-btn-variant-ghost.l-btn-color-light-gray:disabled {
+  @apply bg-transparent border-transparent text-inherit;
+}
+
+/* button variant link */
+.l-btn.l-btn-variant-link.l-btn-color-light-gray {
+  @apply bg-transparent border-transparent text-gray-200;
+}
+
+.l-btn.l-btn-variant-link.l-btn-color-light-gray:hover {
+  @apply text-gray-300 underline;
+}
+
+.l-btn.l-btn-variant-link.l-btn-color-light-gray:focus-visible {
+  @apply underline outline-none;
+}
+
+.l-btn.l-btn-variant-link.l-btn-color-light-gray:active {
+  @apply text-gray-400;
+}
+
+.l-btn.l-btn-variant-link.l-btn-color-light-gray:disabled {
+  @apply text-gray-100 no-underline;
+}
+
+/* button variant outline */
+.l-btn.l-btn-variant-outline.l-btn-color-light-gray {
+  @apply bg-transparent text-inherit;
+}
+
+.l-btn.l-btn-variant-outline.l-btn-color-light-gray:hover {
+  @apply border-gray-300 bg-gray-300 text-black;
+}
+
+.l-btn.l-btn-variant-outline.l-btn-color-light-gray:focus-visible {
+  @apply outline-gray-400;
+}
+
+.l-btn.l-btn-variant-outline.l-btn-color-light-gray:active {
+  @apply border-gray-400 bg-gray-400;
+}
+
+.l-btn.l-btn-variant-outline.l-btn-color-light-gray:disabled {
+  @apply border-gray-100 bg-transparent text-gray-100;
+}
+
 @each $color in amber, blue, cyan, emerald, fuchsia, gray, green, indigo, lime, neutral, orange, pink, purple, red, rose, sky, slate, stone, teal, violet,
   yellow, zinc
 {

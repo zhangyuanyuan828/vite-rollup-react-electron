@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { kebabCase } from 'lodash'
 import PropTypes from 'prop-types'
 import { forwardRef } from 'react'
 import { ComponentSize, COMPONENT_SIZES } from '../system'
@@ -13,6 +14,7 @@ export const BUTTON_COLOR_THEMES = [
   'gray',
   'green',
   'indigo',
+  'lightGray',
   'lime',
   'neutral',
   'orange',
@@ -61,7 +63,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
           'l-btn-block': block,
           'l-btn-round': round,
           ['l-btn-size-' + size]: size,
-          ['l-btn-color-' + colorTheme]: colorTheme,
+          ['l-btn-color-' + kebabCase(colorTheme)]: colorTheme,
           ['l-btn-variant-' + variant]: variant
         },
         className
