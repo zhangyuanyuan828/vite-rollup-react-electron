@@ -4,6 +4,7 @@ import eslint from '@rollup/plugin-eslint'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
 import { defineConfig } from 'rollup'
+import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const extensions = ['.js', '.ts']
@@ -28,6 +29,12 @@ export const mainOptions = defineConfig({
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    terser({
+      compress: true,
+      format: {
+        comments: false
+      }
     })
   ],
   external: ['electron', 'electron-devtools-installer']
@@ -53,6 +60,12 @@ export const preloadOptions = defineConfig({
     replace({
       preventAssignment: true,
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    terser({
+      compress: true,
+      format: {
+        comments: false
+      }
     })
   ],
   external: ['electron']
