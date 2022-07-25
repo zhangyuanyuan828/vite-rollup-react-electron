@@ -8,8 +8,6 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development ts-node scripts/start.ts",
     "build": "cross-env NODE_ENV=production tsc && vite build && rollup -c rollup.config.ts && electron-builder --config electron-builder.config.js",
-    "build:main": "rollup -c rollup.config.ts",
-    "build:renderer": "tsc && vite build",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "postinstall": "electron-builder install-app-deps",
     "prepare": "husky install"
